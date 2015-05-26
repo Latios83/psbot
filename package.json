@@ -1,6 +1,6 @@
 {
   "name": "psbot",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "PS Bots in Node.JS made easy.",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "request": "*",
-    "ws": "*"
+    "ws": "*",
+    "chalk": "*"
   },
   "author": "Anthony A.",
   "license": "MIT",

@@ -1,14 +1,29 @@
 var WebSocket = require('ws');
 var request = require('request');
+var chalk = require('chalk');
 
 exports.server = '';
 exports.symbol = '!';
 exports.commands = {};
 exports.name = '';
 exports.pass = '';
-exports.rooms = '';
+exports.rooms = [];
 exports.connect = function() {
+  var errors = 0;
+  if (exports.name === '') {
+    console.log(chalk.red("You need to set 'name'."));
+    errors+=1;
+  };
+  if (exports.rooms.length === 0) {
+    console.log(chalk.red("You need to set 'rooms' to an array, like ['tcg']."));
+    errors+=1;
+  };
+  if (errors > 0) {
+    return;
+  }
   ws = new WebSocket("ws://" + exports.server + "/showdown/websocket");
+  console.log(chalk.green('connecting to ' + exports.server + '.'));
+  console.log(chalk.green('using username '+ exports.name + ' and password ' + exports.pass + '.'));
 
   ws.on('open', function() {
   });
@@ -16,7 +31,6 @@ exports.connect = function() {
   ws.on('message', function(data) {
     data = data.replace(/(^>|\n)/, '');
     var msg = data.split('|');
-    console.log(data);
     switch(msg[1]) {
       case 'challstr':
         var url = "http://play.pokemonshowdown.com/action.php";

@@ -26,4 +26,7 @@ ps.commands = {
 }
 ps.connect();
 ```
-
+Then, in terminal, run:
+```
+node app.js
+```

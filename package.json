@@ -1,6 +1,6 @@
 {
   "name": "psbot",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "PS Bots in Node.JS made easy.",
   "main": "index.js",
   "scripts": {

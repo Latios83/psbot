@@ -2,12 +2,17 @@ var WebSocket = require('ws');
 var request = require('request');
 var chalk = require('chalk');
 
+exports.getServer = function(server_name) {
+
+}
+
 exports.server = '';
 exports.symbol = '!';
 exports.commands = {};
 exports.name = '';
 exports.pass = '';
 exports.rooms = [];
+
 exports.connect = function() {
   var errors = 0;
   if (exports.name === '') {
@@ -23,13 +28,13 @@ exports.connect = function() {
   }
   ws = new WebSocket("ws://" + exports.server + "/showdown/websocket");
   console.log(chalk.green('connecting to ' + exports.server + '.'));
-  console.log(chalk.green('using username '+ exports.name + ' and password ' + exports.pass + '.'));
+  console.log(chalk.green('using username "'+ exports.name + '" and password "' + exports.pass + '".'));
 
   ws.on('open', function() {
   });
 
   ws.on('message', function(data) {
-    data = data.replace(/(^>|\n)/, '');
+    data = data.replace(/(^>|\n)/, '').replace('\n','');
     var msg = data.split('|');
     switch(msg[1]) {
       case 'challstr':
@@ -44,9 +49,7 @@ exports.connect = function() {
             "challengekeyid": msg[2], "challenge": msg[3]}}, function(err, res, body) {
               var d = JSON.parse(body.split(']')[1]);
               ws.send("|/trn " + exports.name + ",0," + d.assertion);
-
-
-          })
+          });
         }
         for(var x = 0; x <exports.rooms.length; x++) {
           ws.send("|/join " + exports.rooms[x]);
@@ -55,7 +58,7 @@ exports.connect = function() {
       case 'c:':
         var room = msg[0];
         var user = msg[3];
-        if (msg[4][0] == exports.symbol) {
+        if (msg[4][0] === exports.symbol) {
           var cmd = msg[4].split(exports.symbol)[1].split(' ')[0];
           var args = msg[4].split(cmd + ' ')[1];
           if (exports.commands[cmd]) {
@@ -65,6 +68,7 @@ exports.connect = function() {
             }
           }
         }
+        break;
     }
   });
 }

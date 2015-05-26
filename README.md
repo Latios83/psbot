@@ -5,12 +5,12 @@ You must have node installed.
 
 In terminal, run
 ```
-mkdir bot && npm install psbot
+mkdir bot && cd bot && npm install psbot
 ```
 
 next, open the folder 'bot', and make a new file called 'app.js'
 
-next, in that file, write the following: 
+next, in that file, write the following:
 ```javascript
 var ps = require('psbot');
 

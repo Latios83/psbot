@@ -1,0 +1,23 @@
+{
+  "name": "psbot",
+  "version": "1.0.0",
+  "description": "PS Bots in Node.JS made easy.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/notblizzard/psbot"
+  },
+  "dependencies": {
+    "request": "*",
+    "ws": "*"
+  },
+  "author": "Anthony A.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/notblizzard/psbot/issues"
+  },
+  "homepage": "https://github.com/notblizzard/psbot"
+}

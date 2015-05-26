@@ -16,6 +16,7 @@ var ps = require('psbot');
 
 ps.name = 'botname';
 pa.pass = 'botpass';
+ps.rooms = ['rooms','goe','here'];
 ps.server = 'sim.smogon.com:8000';
 ps.symbol = 'symbolgoeshere';
 ps.exceptions = ['yourusername'];

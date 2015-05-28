@@ -25,7 +25,7 @@ ps.rooms = ['rooms','goe','here'];
 ps.server = 'sim.smogon.com:8000';
 //in commands like '!data gengar', '!' is the symbol.
 ps.symbol = 'symbolgoeshere';
-
+//used in commands. users in here can use any command, no matter what.
 ps.exceptions = ['yourusername'];
 ps.commands = {
   hello: function(args, room, user) {

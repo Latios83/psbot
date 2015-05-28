@@ -1,4 +1,5 @@
 # psbot
+[![NPM](https://nodei.co/npm/psbot.png)](https://nodei.co/npm/psbot/)<br />
 Create Pokemon Showdown Bots easily.
 
 You must have node installed.

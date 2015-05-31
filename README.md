@@ -16,13 +16,12 @@ var ps = require('psbot');
 
 ps.name = 'botname';
 pa.pass = 'botpass';
-ps.rooms = ['rooms','goe','here'];
+ps.rooms = ['rooms','go','here'];
 ps.server = 'sim.smogon.com:8000';
 ps.symbol = 'symbolgoeshere';
-ps.exceptions = ['yourusername'];
 ps.commands = {
   hello: function(args, room, user) {
-    return "Hello World.";
+    return "Hello " + user.userid() + ".";
   }
 }
 ps.connect();

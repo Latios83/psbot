@@ -2,16 +2,16 @@ var WebSocket = require('ws');
 var request = require('request');
 var chalk = require('chalk');
 
-exports.getServer = function(server_name) {
-
-}
-
 exports.server = '';
 exports.symbol = '!';
 exports.commands = {};
 exports.name = '';
 exports.pass = '';
 exports.rooms = [];
+
+String.prototype.userid = function() {
+  return this.toLowerCase().replace(' ', '').replace(/\W/g,'');
+}
 
 exports.connect = function() {
   var errors = 0;

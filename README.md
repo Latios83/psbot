@@ -25,9 +25,7 @@ ps.rooms = ['rooms','goe','here'];
 ps.server = 'sim.smogon.com:8000';
 //in commands like '!data gengar', '!' is the symbol.
 ps.symbol = 'symbolgoeshere';
-ps.commands = {
-  hello: function(args, room, user) {
-    return "Hello " + user.userid() + ".";
+
 /* commands. the parameters are
  * args, room, user
  * user has a prototype called userid(), which returns

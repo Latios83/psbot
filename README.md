@@ -30,7 +30,8 @@ ps.commands = {
     return "Hello " + user.userid() + ".";
 /* commands. the parameters are
  * args, room, user
- * user has a prototype called userid(), which returns the name of the user without spaces and with only numbers and letters.
+ * user has a prototype called userid(), which returns
+ * the name of the user without spaces and with only numbers and letters.
 */
 
 ps.commands = {
